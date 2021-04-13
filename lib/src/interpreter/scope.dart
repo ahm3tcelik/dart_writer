@@ -1,0 +1,15 @@
+enum Scope {
+  CLASS,
+  INTERFACE,
+  CONSTRUCTOR,
+  METHOD,
+  ENUM,
+  IF,
+  ELIF,
+  ELSE,
+  FOR,
+  FOR_EACH,
+  WHILE,
+  GET,
+  SET
+}

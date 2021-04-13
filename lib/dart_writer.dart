@@ -1,3 +1,5 @@
+library dart_writer;
+
 export 'package:dart_style/dart_style.dart';
 
 export './src/interpreter/IExpression.dart';

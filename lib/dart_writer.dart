@@ -2,6 +2,7 @@ library dart_writer;
 
 export 'package:dart_style/dart_style.dart';
 
+export './src/helpers/dart_helper.dart';
 export './src/interpreter/IExpression.dart';
 export './src/interpreter/editor_context.dart';
 export './src/extensions/string_extension.dart';
@@ -24,7 +25,9 @@ export './src/interpreter/loops/while.dart';
 // Other
 export './src/interpreter/other/import.dart';
 export './src/interpreter/other/parameter.dart';
+export './src/interpreter/other/parameter_item.dart';
 export './src/interpreter/other/argument.dart';
+export './src/interpreter/other/argument_item.dart';
 export './src/interpreter/other/enum.dart';
 
 // OOP

@@ -5,6 +5,12 @@ import '../scope.dart';
 class While implements IExpression {
   final String condition;
   final List<IExpression>? statements;
+  
+  /// Example
+  /// ```dart
+  /// While('i < 5',statements: [ RawCode('print(i);'), Assign('i', 'i + 1')])
+  /// ```
+  /// [Output]: while (i < 5) { print(i); i = i + 1; }
   While(this.condition, {this.statements});
 
   @override

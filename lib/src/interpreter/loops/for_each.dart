@@ -7,6 +7,11 @@ class ForEach implements IExpression {
   final String iterable;
   final List<IExpression>? statements;
 
+  /// Example
+  /// ```dart
+  /// ForEach('item', 'userList', statements: [ Return('UserCard(item')])
+  /// ```
+  /// [Output]: for (var item in userList) { return UserCard(item); }
   ForEach(this.iterationVar, this.iterable, {this.statements});
 
   @override

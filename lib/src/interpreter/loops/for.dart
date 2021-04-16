@@ -7,6 +7,12 @@ class For implements IExpression {
   final String condition;
   final String action;
   final List<IExpression>? statements;
+
+  /// Example
+  /// ```dart
+  /// For('i = 0', 'i < 5', 'i++', statements: [RawCode('print(i);')])
+  /// ```
+  /// [Output]: for (var i = 0; i < 5; i++) { print(i); }
   For(this.init, this.condition, this.action, {this.statements});
 
   @override

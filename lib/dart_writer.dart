@@ -29,6 +29,7 @@ export './src/interpreter/other/parameter_item.dart';
 export './src/interpreter/other/argument.dart';
 export './src/interpreter/other/argument_item.dart';
 export './src/interpreter/other/enum.dart';
+export './src/interpreter/other/raw_code.dart';
 
 // OOP
 export './src/interpreter/oop/class.dart';

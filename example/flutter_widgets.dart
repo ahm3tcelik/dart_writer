@@ -1,53 +1,64 @@
+import 'dart:convert';
 import 'package:dart_writer/dart_writer.dart';
+import 'package:dart_writer/src/interpreter/other/parameter_item.dart';
 
-/// [ Output ]
-/*
-Widget get buildScaffold {
-  return Scaffold(
-    appBar: AppBar(title: 'ahm3tcelik'),
-    body: Center(child: Text('Selam'))
-  );
-}
-*/
 
 void main() {
   var context = EditorContext(enableDartFormatter: true);
+  var dartHelper = DartHelper.instance;
+  Map map = jsonDecode(json);
 
-  var appBar = Call(
-    'AppBar',
-    argument: Argument([
-      MapEntry('title', "'ahm3tcelik'")
-    ])
-  );
-
-  var body = Call(
-    'Center',
-    argument: Argument([
-      MapEntry('child', Call('Text',
-        argument: Argument([
-          MapEntry(null, "'Selam'")])
-        )
+  var homePage = Class('HomePage',
+    baseClass: 'StatelessWidget',
+    methods: [
+      Annotation('override'),
+      Method(
+        name: 'build',
+        returnType: 'Widget',
+        param: Parameter([
+          ParameterItem('BuildContext context'),
+        ]),
+        statements: [ Return(dartHelper.getCodeFromMap(map)) ]
       )
-    ])
+    ]
   );
 
-  var scaffold = Call(
-    'Scaffold',
-    argument: Argument([
-      MapEntry('appBar', appBar),
-      MapEntry('body', body)
-    ])
-  );
-
-  var code = context.build([
-    Getter(
-      name: 'buildScaffold',
-      returnType: 'Widget',
-      statements: [
-        Return(scaffold)
-      ]
-    ),
-  ]);
-
-  print(code);
+  print(context.build([
+    Import('package:flutter/material.dart'),
+    homePage
+  ]));
 }
+
+String json = ''' 
+{
+  "as": "Scaffold",
+  "appBar": {
+    "as": "AppBar",
+    "title": {
+      "as": "Text",
+      "params": [
+        "'Ahmet'"
+      ]
+    },
+    "centerTitle": "false"
+  },
+  "body": {
+    "as": "Center",
+    "child": {
+      "as": "Row",
+      "children": [
+        {
+          "as": "Icon",
+          "params": ["Icons.add"],
+          "color": "Colors.red"
+        },
+        {
+          "as": "Text",
+          "params": ["'Ahmet'"],
+          "textAlign": "TextAlign.center"
+        }
+      ]
+    }
+  }
+}
+''';

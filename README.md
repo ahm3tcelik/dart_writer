@@ -111,13 +111,13 @@ class HomePage extends StatelessWidget {
 
 - [Documentation Guideline](#documentation-guideline)
   - [Conditions](#conditions)
-    - [If](#if)
-    - [Else If](#else-if)
-    - [Else](#else) 
+    - [If](#conditions)
+    - [Else If](#conditions)
+    - [Else](#conditions) 
   - [Loops](#loops)
-    - [For](#for)
-    - [Foreach](#foreach)
-    - [While](#while)
+    - [For](#loops)
+    - [Foreach](#loops)
+    - [While](#loops)
   - [Statements](#statements)
     - [Assignment](#assignment)
     - [Call](#call)
@@ -138,3 +138,68 @@ class HomePage extends StatelessWidget {
     - [Argument](#argument)
     - [Parameter](#parameter)
   
+### Conditions
+```dart
+Method(
+  name: 'getMin',
+  returnType: 'int',
+  statements: [
+    Assign('var num1', '5'),
+    Assign('var num2', '10'),
+    If(condition: 'num1 < num2', statements: [Return('num1')]),
+    ElseIf(condition: 'num1 == num2', statements: [Return('num1')]),
+    Else(statements: [Return('num2')])
+  ]  
+)
+```
+Generated code:
+```dart
+int getMin() {
+  var num1 = 5;
+  var num2 = 10;
+  if (num1 < num2) {
+    return num1;
+  } else if (num1 == num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+}
+```
+
+### Loops
+```dart
+Method(
+  name: 'loops',
+  returnType: 'void',
+  statements: [
+    For('i = 0', 'i < 5', 'i++',
+      statements: [RawCode('print(i);')]
+    ),
+    ForEach('item', 'userList',
+      statements: [
+        Return('UserCard(item)')
+      ]
+    ),
+    While('i < 5',
+      statements: [ RawCode('print(i);'), Assign('i', 'i + 1')]
+    )
+  ]  
+)
+```
+Generated code:
+```dart
+void loops() {
+  for (var i = 0; i < 5; i++) {
+    print(i);
+  }
+  for (var item in userList) { 
+    return UserCard(item);     
+  }
+  while (i < 5) {
+    print(i);
+    i = i + 1;
+  }
+}
+```
+```dart

@@ -20,29 +20,28 @@ class Singleton {
 void main() {
   var editor = EditorContext();
   var singletonCode = editor.build([
-    Class(
-      'Singleton',
-      attributes: [
-        Attribute(name: '_instance', type: 'Singleton?', modifiers: 'static'),
-      ],
-      methods: [
-        Getter(
-            name: 'instance',
-            returnType: 'Singleton',
-            modifier: 'static',
-            statements: [
-              If(
-                  condition: '_instance == null',
-                  statements: [Assign('_instance', 'Singleton._init()')]
-              ),
-              Return('_instance!')
-            ]
-        )
-      ],
-      constructors: [
-        Constructor(className: 'Singleton', constructorName: '_init')
-      ]
-    ),
+    Class('Singleton', 
+    baseClass: 'Base',
+    attributes: [
+      Attribute(name: '_instance', type: 'Singleton?', modifiers: 'static'),
+      Attribute(name: 'list', type: 'List', modifiers: 'final'),
+    ], methods: [
+      Getter(
+          name: 'instance',
+          returnType: 'Singleton',
+          modifier: 'static',
+          statements: [
+            If(
+                condition: '_instance == null',
+                statements: [Assign('_instance', 'Singleton._init()')]),
+            Return('_instance!')
+          ])
+    ], constructors: [
+      Constructor(
+          className: 'Singleton',
+          constructorName: '_init'
+      )
+    ]),
   ]);
 
   print(singletonCode);

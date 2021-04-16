@@ -18,7 +18,7 @@ class Constructor implements IExpression {
   /// Constructor(
   ///   className: 'Bird',
   ///   constructorName: 'fromName',
-  ///   param: Parameter([MapEntry('this.name', true)]),
+  ///   param: Parameter(ParameterItem('this.name', isNamed: true, isRequired: true)),
   ///   superArgument: Argument([MapEntry(null, 'name')]),
   ///   statements: [
   ///     Call('initialize', argument: Argument([MapEntry(null, '5')]))

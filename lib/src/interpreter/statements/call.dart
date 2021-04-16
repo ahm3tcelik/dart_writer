@@ -18,7 +18,7 @@ class Call implements IExpression {
   String interpret(EditorContext context) {
     var buffer = StringBuffer();
     var argsText = '';
-    if (argument != null) {
+    if (argument?.args?.isNotEmpty ?? false) {
       argsText = argument!.interpret(context);
     }
     buffer.write('$name($argsText)'.putSemicolon);

@@ -131,12 +131,12 @@ class HomePage extends StatelessWidget {
         - [Getter](#getter)
         - [Setter](#setter)
     - [Interface](#interface)
-  - Other
-    - [Annotations](#annotations)
-    - [Import](#import)
-    - [Enum](#enum)
-    - [Argument](#argument)
-    - [Parameter](#parameter)
+  - Other(#other)
+    - [Annotations](#other)
+    - [Import](#other)
+    - [Enum](#other)
+    - [Argument](#other)
+    - [Parameter](#other)
   
 ### Conditions
 ```dart
@@ -320,3 +320,40 @@ class Bird extends Animal with Feather, Walk implements Flyable, Crowable {
   }
 }
 ```
+
+### Interface
+| Parameter      | Description | Output |
+| ----------- | ----------- | ----------- |
+| String name      | Interface Name | `interface Flyable` |
+| String? baseClass | extends class  | `interface Flyable extends Breathable` |
+| List\<IExpression\>? prototypes   | abstract methods of interface | `void doFly();` |
+
+Example Interface
+```dart
+Interface('Flyable',
+    baseClass: 'Breathable',
+    prototypes: [
+      Method(name: 'doFly', returnType: 'void')
+    ]
+)
+``` 
+Generated code:
+```dart
+abstract class Flyable extends Breathable {
+  void doFly();
+}
+```
+### Other
+
+| Expression  | Example Code | Output |
+| ----------- | ----------- | ----------- |
+| Annotation  | Annotation('override') | `@override` |
+| Import      | Import('package:dart_writer/dart_writer.dart', as: 'writer') | `import 'package:dart_writer/dart_writer.dart' as writer;` |
+| Enum  | Enum('Roles', enums: ['USER', 'ADMIN', 'DEVELOPER']) | `enum Roles { USER, ADMIN, DEVELOPER }` |
+| Paramter | Parameter([ParameterItem('String name', isNamed: true, isRequired: true)]) | `{required String name}` |
+| Argument | Argument([ArgumentItem("'Star'", name:'surname']) | `surname: 'Star'` |
+| RawCode |  RawCode('var name = user?.name ?? "'ahmet'"') | `[Output]: var name = user?.name ?? 'ahmet'` |
+
+
+## TASK LIST
+- [ ] Unit Tests

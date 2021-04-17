@@ -21,49 +21,42 @@ class Class implements IExpression {
   final List<IExpression>? methods;
 
   /// Example
-  /// Class('Bird',
-  ///     baseClass: 'Animal',
-  ///     interfaces: ['Flyable', 'Crowable'],
-  ///     mixins: ['Feather', 'Walk'],
-  ///     attributes: <Attribute>[
-  ///       Attribute(modifiers: 'final', type: 'String', name: 'name'),
-  ///     ],
-  ///     constructors: <Constructor>[
-  ///       Constructor(
-  ///         className: 'Bird',
-  ///         constructorName: 'fromName',
-  ///         param: Parameter([MapEntry('this.name', true)]),
-  ///         superArgument: Argument([MapEntry(null, 'name')]),
-  ///       )
-  ///     ],
-  ///     methods: [
-  ///        Getter(name: 'getName', returnType: 'String', statements: [Return("'civciv'")]),
-  ///       Annotation('override'),
-  ///       Method(
-  ///         name: 'onFly',
-  ///         returnType: 'void',
-  ///         param: Parameter([
-  ///           MapEntry('String height', true),
-  ///         ]),
-  ///         statements: [Return('')]
-  ///       ),
-  ///     ]
-  ///   )
-  ///
+  /// ```dart
+  /// Class(
+  ///  'Bird',
+  ///  baseClass: 'Animal',
+  ///  interfaces: ['Flyable', 'Crowable'],
+  ///  mixins: ['Feather', 'Walk'],
+  ///  attributes: <Attribute> [
+  ///    Attribute(modifiers: 'final', type: 'String', name: 'name'),
+  ///  ],
+  ///  constructors: <Constructor> [
+  ///    Constructor(
+  ///      className: 'Bird',
+  ///      constructorName: 'fromName',
+  ///      param: Parameter([ParameterItem('this.name', isRequired: true, isNamed: true)]),
+  ///        superArgument: Argument([ArgumentItem('name')])
+  ///    ),
+  ///  ],
+  ///  methods: [
+  ///    Method(
+  ///      name: 'onFly',
+  ///      returnType: 'double',
+  ///      param: Parameter([ParameterItem('double height')]),
+  ///      statements: [Return('height * 2')]
+  ///    ),
+  ///  ]
+  ///  );
+  /// ```
   ///  [Output]
-  //   class Bird extends Animal with Feather, Walk implements Flyable, Crowable {
-  //     final String name;
-  //
-  //     Bird.fromName({required this.name}) : super(name);
-  //
-  //     String get getName {
-  //       return 'civciv';
-  //     }
-  //
-  //     @override
-  //     void onFly({required String height}) {
-  //       return ;
-  //     }
+  //   class Bird extends Animal with Feather, Walk implements Flyable, Crowable {   
+  //   final String name;
+
+  //   Bird.fromName({required this.name}) : super(name);
+
+  //   double onFly(double height) {        
+  //     return height * 2;
+  //   }
   // }
   Class(this.className,
       {this.isAbstract,

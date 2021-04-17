@@ -6,9 +6,9 @@ class RawCode implements IExpression {
 
   /// Example
   /// ```dart
-  /// While('item', 'userList', statements: [ Return('UserCard(item')])
+  /// RawCode('var name = user?.name ?? "'ahmet'"')
   /// ```
-  /// [Output]: for (var item in userList) { return UserCard(item); }
+  /// [Output]: var name = user?.name ?? 'ahmet'
   RawCode(this.code);
 
   @override

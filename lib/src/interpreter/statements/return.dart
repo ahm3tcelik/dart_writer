@@ -2,21 +2,22 @@ import '../IExpression.dart';
 import '../editor_context.dart';
 import '../../extensions/string_extension.dart';
 
-/// [returnValue] must be [String] or [IExpression]
-
-/// Example # 1 
-///```dart
-/// Return('name')
-///```
-/// [Output]: return name;
-/// 
-/// Example # 2 
-///```dart
-/// Return(Call('getName'))
-///```
-/// [Output]: return getName();
 class Return implements IExpression {
   final dynamic returnValue;
+
+  /// [returnValue] must be [String] or [IExpression]
+
+  /// Example # 1 
+  ///```dart
+  /// Return('name')
+  ///```
+  /// [Output]: return name;
+  /// 
+  /// Example # 2 
+  ///```dart
+  /// Return(Call('getName'))
+  ///```
+  /// [Output]: return getName();
   Return(this.returnValue);
 
   @override

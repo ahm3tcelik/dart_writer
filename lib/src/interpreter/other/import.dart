@@ -8,9 +8,9 @@ class Import implements IExpression {
 
   /// Example
   /// ```dart
-  /// Enum('Roles', enums: ['USER', 'ADMIN', 'DEVELOPER'])
+  /// Import('package:dart_writer/dart_writer.dart', as: 'writer')
   /// ```
-  /// [Output]: enum Roles { USER, ADMIN, DEVELOPER }
+  /// [Output]: import 'package:dart_writer/dart_writer.dart as writer;
   Import(this.path, {this.asName});
 
   @override

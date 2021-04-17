@@ -1,5 +1,19 @@
 import 'package:dart_writer/dart_writer.dart';
 
+/// [Output]:
+/// ```dart
+/// int getMin() {
+///   var num1 = 5;
+///   var num2 = 10;
+///   if (num1 < num2) {        
+///     return num1;
+///   } else if (num1 == num2) {
+///     return num1;
+///   } else {
+///     return num2;
+///   }
+/// }
+/// ```
 void main() {
   var context = EditorContext(enableDartFormatter: true);
   var code = Method(

@@ -18,7 +18,7 @@ class Method implements IExpression {
   ///   name: 'walk',
   ///   returnType: 'void',
   ///   param: Parameter([
-  ///     MapEntry('int step', true),
+  ///     ParameterItem('int step', isRequired: true, isNamed: true),
   ///   ]),
   /// )
   ///```
@@ -32,9 +32,9 @@ class Method implements IExpression {
   ///   returnType: 'User',
   ///   isAsync: true,
   ///   param: Parameter([
-  ///     MapEntry('String name', true),
-  ///     MapEntry('String surname', true),
-  ///     MapEntry('int? age', false)
+  ///     ParameterItem('String name', isRequired: true, isNamed: true),
+  ///     ParameterItem('String surname', isRequired: true, isNamed: true),
+  ///     ParameterItem('int? age', isRequired: false, isNamed: true)
   ///   ]),
   ///   statements: [
   ///     Return('newUser')

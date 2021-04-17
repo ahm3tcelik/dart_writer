@@ -6,6 +6,12 @@ class Assign implements IExpression {
   final String dest;
   final dynamic source;
   final bool isAsync;
+  
+  /// Example
+  /// ```dart
+  /// Assign('var i', '5')
+  /// ```
+  /// [Output]: var i = 5;
   Assign(this.dest, this.source, {this.isAsync = false});
 
   @override

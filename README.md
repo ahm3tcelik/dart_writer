@@ -107,6 +107,22 @@ class HomePage extends StatelessWidget {
 }
 ```
 
+## Installation
+
+In the `pubspec.yaml` of your **Flutter** / **Dart** project, add the following dependency:
+
+```yaml
+dependencies:
+  ...
+  dart_writer: any
+```
+
+In your library file add the following import:
+
+```dart
+import 'package:dart_writer/dart_writer.dart';
+```
+
 ## API Documentation
 
 - [Documentation Guideline](#documentation-guideline)
@@ -119,9 +135,9 @@ class HomePage extends StatelessWidget {
     - [Foreach](#loops)
     - [While](#loops)
   - [Statements](#statements)
-    - [Assignment](#assignment)
-    - [Call](#call)
-    - [Return](#return)
+    - [Assignment](#statements)
+    - [Call](#statements)
+    - [Return](#statements)
   - [OOP Concepts](#oop-concepts)
     - [Class](#class)
       - [Attributes](#attributes)

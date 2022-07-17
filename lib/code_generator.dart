@@ -1,4 +1,4 @@
-library dart_writer;
+library code_generator;
 
 export 'package:dart_style/dart_style.dart';
 

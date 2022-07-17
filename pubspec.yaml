@@ -1,13 +1,13 @@
-name: dart_writer
-version: 0.0.1
-homepage: https://github.com/ahm3tcelik/dart_writer
+name: code_generator
+version: 0.0.2
+homepage: https://github.com/codis-io/code_generator
 description: DartWriter provides API to generate Dart source code. It can make your job easier while developing flutter/dart tools. You can also generate Flutter UI code.
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  dart_style: ^2.0.0
+  dart_style: ^2.2.3
 
-dev_dependencies:
-  pedantic: ^1.11.0
+dev_dependencies: 
+  lints: ^2.0.0

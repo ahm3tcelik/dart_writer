@@ -1,6 +1,8 @@
-# DartWriter
+# CodeGenerator
 
-`DartWriter` provides API to generate Dart source code. It can make your job easier while developing flutter/dart tools. You can also generate Flutter UI code.
+* Fork from DartWriter that was stopped developing
+
+`CodeGenerator` provides API to generate Dart source code. It can make your job easier while developing flutter/dart tools. You can also generate Flutter UI code.
 
 ### Hello World Example
 
@@ -114,45 +116,36 @@ In the `pubspec.yaml` of your **Flutter** / **Dart** project, add the following 
 ```yaml
 dependencies:
   ...
-  dart_writer: any
+  code_generator: any
 ```
 
 In your library file add the following import:
 
 ```dart
-import 'package:dart_writer/dart_writer.dart';
+import 'package:code_generator/code_generator.dart';
 ```
 
 ## API Documentation
 
-- [Documentation Guideline](#documentation-guideline)
-  - [Conditions](#conditions)
-    - [If](#conditions)
-    - [Else If](#conditions)
-    - [Else](#conditions) 
-  - [Loops](#loops)
-    - [For](#loops)
-    - [Foreach](#loops)
-    - [While](#loops)
-  - [Statements](#statements)
-    - [Assignment](#statements)
-    - [Call](#statements)
-    - [Return](#statements)
-  - [OOP Concepts](#oop-concepts)
-    - [Class](#class)
-      - [Attributes](#attributes)
-      - [Constructors](#constructors)
-      - [Methods](#methods)
-        - [Method](#method) 
-        - [Getter](#getter)
-        - [Setter](#setter)
+- [CodeGenerator](#codegenerator)
+    - [Hello World Example](#hello-world-example)
+    - [Flutter Stateless Widget Example](#flutter-stateless-widget-example)
+  - [Installation](#installation)
+  - [API Documentation](#api-documentation)
+    - [Conditions](#conditions)
+    - [Loops](#loops)
+    - [Statements](#statements)
+    - [OOP Concepts](#oop-concepts)
+      - [Class](#class)
+      - [Constructor](#constructor)
+      - [Attribute](#attribute)
+    - [Methods](#methods)
+      - [Method](#method)
+      - [Getter](#getter)
+      - [Setter](#setter)
     - [Interface](#interface)
-  - Other(#other)
-    - [Annotations](#other)
-    - [Import](#other)
-    - [Enum](#other)
-    - [Argument](#other)
-    - [Parameter](#other)
+    - [Other](#other)
+  - [TASK LIST](#task-list)
   
 ### Conditions
 ```dart
@@ -364,7 +357,7 @@ abstract class Flyable extends Breathable {
 | Expression  | Example Code | Output |
 | ----------- | ----------- | ----------- |
 | Annotation  | Annotation('override') | `@override` |
-| Import      | Import('package:dart_writer/dart_writer.dart', as: 'writer') | `import 'package:dart_writer/dart_writer.dart' as writer;` |
+| Import      | Import('package:code_generator/code_generator.dart', as: 'writer') | `import 'package:code_generator/code_generator.dart' as writer;` |
 | Enum  | Enum('Roles', enums: ['USER', 'ADMIN', 'DEVELOPER']) | `enum Roles { USER, ADMIN, DEVELOPER }` |
 | Paramter | Parameter([ParameterItem('String name', isNamed: true, isRequired: true)]) | `{required String name}` |
 | Argument | Argument([ArgumentItem("'Star'", name:'surname']) | `surname: 'Star'` |

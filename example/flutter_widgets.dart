@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:dart_writer/dart_writer.dart';
-import 'package:dart_writer/src/interpreter/other/parameter_item.dart';
+import 'package:code_generator/code_generator.dart';
+import 'package:code_generator/src/interpreter/other/parameter_item.dart';
 
 
 void main() {

@@ -1,5 +1,5 @@
 import 'dart:collection';
-import 'package:dart_writer/dart_writer.dart';
+import 'package:code_generator/code_generator.dart';
 
 import 'IExpression.dart';
 import '../constants.dart';

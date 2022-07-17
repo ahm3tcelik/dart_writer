@@ -1,4 +1,4 @@
-import 'package:dart_writer/dart_writer.dart';
+import 'package:code_generator/code_generator.dart';
 
 /// [ Output ]
 /*

@@ -54,7 +54,7 @@ class DartHelper {
           var innerArg = _getArgument(child);
           callList.add(Call(child['as'], argument: innerArg));
         });
-        list.add(ArgumentItem(callList, name:'children'));
+        list.add(ArgumentItem(callList, name: entry.key));
       } else {
         list.add(ArgumentItem(entry.value, name: entry.key));
       }
